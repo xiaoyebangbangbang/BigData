@@ -46,6 +46,6 @@
   + AplcatinMaster (AM):负责对一个任务流程的调度、管理，包括任务注册、资源申请、以及和NodeManage通信以开启和杀掉任务等。
   + Container：Yarn架构下对运算资源的一种描述，它封装了某个结点的多维度资源，包活CPU、RAM、Disk、Network等。当AM向RM申请资源时，RM分配的资源就是以cotaner表示的，Map task和Reduce Task只能在所分配的cntainer描述限制中运行。
 ## 任务流程
-  在Yarn中，资源管理由ResourceManage和NodeManager共同完成，其中，Resource-Manager中的调度器负责资源的分配，NodeManager负责资源的供给和隔离。Resource-Manager将某个NodeManager上资源分配给任务(所谓的“资源调度”)后，NodeManager需按照要求为任务提供相应的资源，并保证这些资源具有独占性，为任务运行提供基础的保证(所谓的资源隔离)。
-  Yarn架构中的MapReduce任务运行流程主要可以分为两个部分：一个是客户端向RsocoueManrer提交任务，ResourceManager通知相应的NodeManager启动MRApMaser；二是MRAppMaster启动成功后，则由它调度整个任务的运行，直到任务完成。其详细步骤如图所示。
+  + 在Yarn中，资源管理由ResourceManage和NodeManager共同完成，其中，Resource-Manager中的调度器负责资源的分配，NodeManager负责资源的供给和隔离。Resource-Manager将某个NodeManager上资源分配给任务(所谓的“资源调度”)后，NodeManager需按照要求为任务提供相应的资源，并保证这些资源具有独占性，为任务运行提供基础的保证(所谓的资源隔离)。
+  + Yarn架构中的MapReduce任务运行流程主要可以分为两个部分：一个是客户端向RsocoueManrer提交任务，ResourceManager通知相应的NodeManager启动MRApMaser；二是MRAppMaster启动成功后，则由它调度整个任务的运行，直到任务完成。其详细步骤如图所示。
 ![](https://upload-images.jianshu.io/upload_images/27324454-008af12d72d2638f.png?imageMogr2/auto-orient/strip|imageView2/2/w/770/format/webp)
